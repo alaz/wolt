@@ -1,0 +1,10 @@
+*~
+*.iml
+*.pdf
+.DS_Store
+/.ensime
+/.idea/
+/out
+/project/project/target/
+/project/target/
+/target
