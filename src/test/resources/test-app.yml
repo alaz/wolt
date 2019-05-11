@@ -1,0 +1,7 @@
+server:
+  type: simple
+  applicationContextPath: /venue
+
+  connector:
+    type: http
+    port: 50080
