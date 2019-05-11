@@ -5,3 +5,6 @@ server:
   connector:
     type: http
     port: 50080
+
+logging:
+  level: WARN

@@ -6,7 +6,7 @@ import javax.ws.rs.core.MediaType
 import javax.ws.rs.{Consumes, PUT, Path, Produces}
 import me.alaz.interview.wolt.api.WeekSchedule;
 
-@Path("/human/hours")
+@Path("/hours/human")
 @Consumes(Array(MediaType.APPLICATION_JSON))
 @Produces(Array(MediaType.TEXT_PLAIN))
 class HumanHours {

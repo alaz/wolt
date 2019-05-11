@@ -18,7 +18,7 @@ class InputTest extends FunSpec with Matchers with OptionValues {
 
   describe("open hours validator") {
     it("accepts valid input 1") {
-      val schedule = Mapper.readValue(fixture("fixtures/correct1.json"), classOf[WeekSchedule])
+      val schedule = Mapper.readValue(fixture("fixtures/correct-1.json"), classOf[WeekSchedule])
       schedule.monday should be (None)
       schedule.tuesday should be (None)
       schedule.wednesday should be (None)
@@ -29,7 +29,7 @@ class InputTest extends FunSpec with Matchers with OptionValues {
     }
 
     it("accepts valid input 2") {
-      val schedule = Mapper.readValue(fixture("fixtures/correct2.json"), classOf[WeekSchedule])
+      val schedule = Mapper.readValue(fixture("fixtures/correct-2.json"), classOf[WeekSchedule])
       schedule.monday should equal (Some(Nil))
       schedule.tuesday.value should have (size(2))
       schedule.wednesday should equal (Some(Nil))
@@ -45,15 +45,23 @@ class InputTest extends FunSpec with Matchers with OptionValues {
       }
     }
 
+    it("duplicate day overrides") {
+      // NOTE: this is a corner case, since JSON spec does not specify what behavior is correct.
+      // So we are safe to assume here that our library behavior is correct. Which means
+      // that this test case is kept here for reference mostly.
+      val schedule = Mapper.readValue(fixture("fixtures/corner-dup.json"), classOf[WeekSchedule])
+      schedule.monday should equal (Some(Seq(OpenHours("open", 1))))
+    }
+
+    // NOTE: it would be nice to utilize validation provided by the framework for us.
+    // See https://github.com/datasift/dropwizard-scala#limitations
     ignore("fails for incorrect type") {
-      // FIXME: https://github.com/datasift/dropwizard-scala#limitations
       an[JsonProcessingException] should be thrownBy {
         Mapper.readValue(fixture("fixtures/incorrect-type.json"), classOf[WeekSchedule])
       }
     }
 
     ignore("fails for incorrect value") {
-      // FIXME: https://github.com/datasift/dropwizard-scala#limitations
       an[JsonProcessingException] should be thrownBy {
         Mapper.readValue(fixture("fixtures/incorrect-value.json"), classOf[WeekSchedule])
       }
