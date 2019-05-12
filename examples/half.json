@@ -1,0 +1,9 @@
+{
+  "saturday": [
+    {
+      "type" : "open", "value" : 34200
+    }, {
+      "type" : "close", "value" : 39600
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+PAYLOAD=$1
+test -z "$PAYLOAD" && exit 1
+
+curl -is -H 'Content-Type: application/json' -X PUT http://localhost:8000/venue/hours/human -d @examples/$PAYLOAD.json
+echo

@@ -130,7 +130,7 @@
           <mainClass>${mainClass}</mainClass>
           <arguments>
             <argument>server</argument>
-            <argument>${project.build.sourceDirectory}/../resources/venue.yml</argument>
+            <argument>${project.build.sourceDirectory}/../resources/config.yml</argument>
           </arguments>
         </configuration>
       </plugin>
