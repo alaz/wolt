@@ -1,20 +1,30 @@
 # Home assignment project
 
-## Building
+## TL;DR
+
+### Building
 
 ```
 mvn compile
 ```
 
-## Testing
+### Testing
 
 * Unit tests: `mvn test`
 * Integration tests: `mvn test -P it`
 
-## Running
+### Running
 
 ```
 mvn exec:java
 ```
 
 The main entry point will be http://localhost:8000/venue/hours/human (which should be interpreted as "give me human represenation of a venue's open hours"). This endpoint accepts JSON and replies with `text/plain` per the task description.
+
+## Notes
+
+TBD
+
+## License
+
+This code is licensed under GPL.
