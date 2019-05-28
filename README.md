@@ -50,11 +50,12 @@ of tolerance during processing.
 
 The worst part of this task is that it is a real-life problem likely
 taken from a real production application. As such it has a lot of
-history behind and the real scope could be vast depending on how painful
-that history was or important the component is. As a result, the
-reviewing team would pay most attention to those details I sacrificed,
-because I know nothing neither about environment nor about users nor
-real problems faced.
+history behind: an environment, customers, boundary conditions, whatever
+else. It is impossible to know what was the struggle and what an
+interviewing team expects to find in an ideal solution. The necessity to
+guess has risks of missing something super important for interviewers
+or working around a problem they have never experienced and will likely
+consider an "overengineering".
 
 1. Where an input comes from? If the source is under control, then it is
 viable to perform strict validation of input data and fail fast on any
@@ -154,3 +155,30 @@ upload garbage of any size.
 ## License
 
 This code is licensed under GPL.
+
+Why GPL? I have a belief that home assignments based on a real company
+problem/code are utterly unethical for two main reasons:
+
+* the scope is usually vast. It is very hard to predict what really was
+  the struggle, because we know neither environment nor customers nor
+  boundary conditions. Trying to guess will eventually result in either
+  missing something they expect to find in the solution or wasting your
+  time to work around problems they have never experienced.
+
+  For example the code of this project contains 510 lines of Scala code
+  alone (not counting YAML, Markdown, Shell and JSON). It is a modest Web
+  application with reasonable code structure, it has unit and integration
+  tests, localization, configuration. And still it is incomplete and not
+  even close to a sane production-ready Web application;
+* a result is immediately available for a company for free.
+  They will look at various solutions, compare them, and copy ideas
+  into their own code improving their service that earns money to
+  them. And interviewers get paid for my time. (I have seen an idea
+  [here](https://www.drmaciver.com/2013/02/a/#comment-3879) to offer $100
+  for home assignments. This looks quite fair to me).
+
+For the reasons outlined above, I highly appreciate when a company
+spends its resources to create a synthetic task.
+
+The only way to protect my work from stealing it is to (1) license it
+under GPL; (2) open it to the whole world. Voilà!
